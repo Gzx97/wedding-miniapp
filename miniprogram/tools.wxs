@@ -43,7 +43,7 @@ var dateFormat = function (timestamp, format) {
   return format;
 }
 
-var imgPath = 'cloud://cloud1-8g01fkyce74b39c8.636c-cloud1-8g01fkyce74b39c8-1313983323/'
+var imgPath = 'cloud://cloud1-4g5w5caob366dd96.636c-cloud1-4g5w5caob366dd96-1318268960/'
 var getImgUrl = function (path, name) {
   if (name && path) {
     return imgPath + path + '/' + name

@@ -1,5 +1,4 @@
 <wxs src="../../tools.wxs" module="tools" />
-
 <view bindtouchstart="movepage" bindtouchend="movepage" class="container">
   <view class="model model-0" wx:if="{{spage==0||epage==0}}">
     <image lazy-load class="bg" src="../../images/red_bg.png"></image>
@@ -10,31 +9,28 @@
       <image lazy-load class="right-xi" src="../../images/words/xi.png"></image>
       <image lazy-load class="wujiayouxi" src="../../images/words/wujiayouxi.png"></image>
       <view class="couple">
-        <view class="husband">王  昊</view>
+        <view class="husband">高振兴</view>
         <view class="middle">&</view>
-        <view class="wife">吴凤媛</view>
+        <view class="wife">李俊霏</view>
       </view>
       <view class="invite">
-        <view>2023.4.12</view>
-        <view>信阳德龙太子酒店</view>
+        <view>2023.10.02</view>
+        <view>海城宏升囍满楼</view>
       </view>
     </view>
   </view>
-
   <view wx:for="{{pictures}}" wx:key="index" class="model model-pic {{spage != (index + 1) ?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}} {{epage === (index + 1) ? 'active' : ''}}" wx:if="{{spage == (index + 1) || epage == (index + 1) || epage == (index + 1) + 1}}">
     <image lazy-load wx:if="{{item.bg}}" class="bg" src="../../images/red_bg.png"></image>
     <view class="content">
-      <image wx:for="{{item.children}}" wx:for-item="subItem" wx:for-index="subIndex"  wx:key="index" lazy-load class="pic {{subItem.class}}" src="{{tools.img(subItem.src)}}" style="{{subItem.style}}" mode="{{subItem.mode || 'widthFix'}}"></image>
+      <image wx:for="{{item.children}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="index" lazy-load class="pic {{subItem.class}}" src="{{tools.img(subItem.src)}}" style="{{subItem.style}}" mode="{{subItem.mode || 'widthFix'}}"></image>
     </view>
   </view>
-
   <view class="model model-last-2 {{spage!= (len - 2) ?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}} {{epage ===  (len - 2)  ? 'active' : ''}}" wx:if="{{spage== (len - 2) ||epage== (len - 2) }}">
     <!-- 时间、地点 -->
     <image lazy-load class="bg" src="../../images/red_bg.png"></image>
     <view class="content">
       <view class="title-1">恭候光临</view>
       <view class="title-2">WEDDING INVITATION</view>
-
       <!-- <view class="part-1">
         <view class="part-title">出嫁宴</view>
         <view>2023年04月09日 15:00</view>
@@ -43,12 +39,11 @@
         <view class="btn-go" data-target="wife" bindtap="handleGoMap">去参加</view>
       </view> -->
       <map class="map" latitude="{{husband_address.point[0]}}" longitude="{{husband_address.point[1]}}" enable-3D="true" enable-building="true" markers="{{[husband_address.marker]}}" show-location="true" data-address="{{husband_address}}" bindmarkertap="goTo"></map>
-
       <view class="part-2">
         <view class="part-title">婚礼</view>
-        <view>2023年04月12日 12:00</view>
-        <view>农历：闰二月廿二（星期三）</view>
-        <view>信阳德龙太子酒店</view>
+        <view>2023年10月02日 10:00</view>
+        <!-- <view>农历：闰二月廿二（星期三）</view> -->
+        <view>海城宏升囍满楼</view>
         <!-- <view class="btn-go" data-target="husband" bindtap="handleGoMap">去参加</view> -->
       </view>
     </view>
@@ -58,15 +53,12 @@
     <image lazy-load class="bg" src="../../images/pink_bg.png"></image>
     <image lazy-load class="xi" src="../../images/xi_bg.png" mode="widthFix"></image>
     <image lazy-load class="cover" src="../../images/packet_bottom.png"></image>
-
     <view class="content">
       <view class="title-1">婚礼邀请</view>
-      <view class="title-2">王  昊 & 吴凤媛</view>
-
+      <view class="title-2">高振兴 & 李俊霏</view>
       <view class="btn-zhufu" bindtap="handleLeaveMessage">去祝福</view>
       <view class="btn-more" bindtap="handleGoGallery">没看够</view>
     </view>
   </view>
-
   <player></player>
 </view>

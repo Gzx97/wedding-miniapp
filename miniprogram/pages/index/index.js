@@ -14,7 +14,7 @@ Page({
         wait: 3000,
         children: [
           {
-            src: 'chinese/8.jpg',
+            src: 'GCQ_2257.jpg',
             mode: 'aspectFill',
             class: 'left-in',
             style: '',
